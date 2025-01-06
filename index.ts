@@ -32,6 +32,7 @@ class LRUCache {
   add(key: string, data: any) {
     this.evictStaleItems(); // evict the stale cached itmes
     if (this.cache.size >= this.size) {
+      // this doesn't actually get the old key
       const oldKey = this.cache.keys().next().value;
       this.cache.delete(oldKey);
       this.timestamps.delete(oldKey);
@@ -41,6 +42,7 @@ class LRUCache {
     this.timestamps.set(key, Date.now());
   }
 
+  // refine this method.
   get(key: string): any {
     if (!this.cache.has(key)) {
       return undefined;
