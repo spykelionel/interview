@@ -13,6 +13,10 @@ Your cache should be configurable with the following options:
 // myCache.add(data, key)
 // number
 
+// feedback
+// 1. Performance.
+//
+
 class LRUCache {
   private size: number;
   private ttl: number;
